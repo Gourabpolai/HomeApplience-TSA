@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix My Device - Smart Appliance Troubleshooting</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Grid Effect -->
+    <div class="grid-background"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+                    <rect x="8" y="8" width="24" height="24" rx="3" stroke="currentColor" stroke-width="2.5"/>
+                    <circle cx="20" cy="20" r="5" fill="currentColor"/>
+                    <path d="M20 4 L20 12 M20 28 L20 36 M4 20 L12 20 M28 20 L36 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <span class="logo-text">Fix<span class="highlight">My</span>Device</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#diagnose" class="nav-link">Diagnose</a></li>
+                <li><a href="#guides" class="nav-link">Guides</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li id="authNavItem">
+                    <a href="#" onclick="openAuthModal(event)" class="nav-link" style="border: 1px solid var(--primary-color); padding: 5px 15px; border-radius: 20px;">
+                        <span id="navUserText">Login</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>AI-Powered Troubleshooting</span>
+            </div>
+            <h1 class="hero-title">
+                Fix Your Home Appliances
+                <span class="gradient-text">In Minutes, Not Days</span>
+            </h1>
+            <p class="hero-description">
+                Diagnose and resolve common appliance issues with our intelligent troubleshooting system. 
+                Save money, time, and reduce downtime with step-by-step guidance.
+            </p>
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="scrollToSection('diagnose')">
+                    Start Diagnosis
+                    <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 3 L10 15 M10 15 L6 11 M10 15 L14 11" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <button class="btn btn-secondary">
+                    View Demo
+                    <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M8 5 L14 10 L8 15 Z"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Stats -->
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-number">15K+</div>
+                    <div class="stat-label">Issues Resolved</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$2.4M</div>
+                    <div class="stat-label">Saved in Repairs</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Appliance Icons -->
+        <div class="floating-icons">
+            <div class="float-icon" style="--delay: 0s; --x: -20px; --y: -30px;">🔧</div>
+            <div class="float-icon" style="--delay: 1s; --x: 30px; --y: -20px;">⚡</div>
+            <div class="float-icon" style="--delay: 2s; --x: -30px; --y: 20px;">🔌</div>
+            <div class="float-icon" style="--delay: 1.5s; --x: 20px; --y: 30px;">🛠️</div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Fix My Device?</h2>
+                <p class="section-subtitle">Modern troubleshooting for modern appliances</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <path d="M20 8 L32 14 L32 26 L20 32 L8 26 L8 14 Z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+                            <circle cx="20" cy="20" r="4" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Smart Diagnostics</h3>
+                    <p class="feature-description">
+                        AI-powered error code analysis and symptom matching for accurate appliance diagnosis
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <rect x="10" y="12" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2.5"/>
+                            <path d="M15 12 L15 8 L25 8 L25 12" stroke="currentColor" stroke-width="2.5"/>
+                            <line x1="20" y1="18" x2="20" y2="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Step-by-Step Solutions</h3>
+                    <p class="feature-description">
+                        Clear, easy-to-follow repair guides with visual aids and safety warnings
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="2.5"/>
+                            <path d="M20 14 L20 20 L25 25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Save Time & Money</h3>
+                    <p class="feature-description">
+                        Reduce repair costs by 60% and get your appliances running in hours, not days
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <rect x="8" y="12" width="24" height="20" rx="2" stroke="currentColor" stroke-width="2.5"/>
+                            <rect x="12" y="8" width="16" height="8" rx="1" fill="currentColor"/>
+                            <line x1="14" y1="18" x2="26" y2="18" stroke="currentColor" stroke-width="2"/>
+                            <line x1="14" y1="22" x2="22" y2="22" stroke="currentColor" stroke-width="2"/>
+                            <line x1="14" y1="26" x2="24" y2="26" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Comprehensive Database</h3>
+                    <p class="feature-description">
+                        Access thousands of error codes and solutions for all major appliance brands
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagnosis Section -->
+    <section class="diagnosis-section" id="diagnose">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Start Your Diagnosis</h2>
+                <p class="section-subtitle">Select your appliance type to begin troubleshooting</p>
+            </div>
+            
+            <div class="appliance-selector">
+                <div class="appliance-card" data-appliance="refrigerator">
+                    <div class="appliance-icon">❄️</div>
+                    <h3>Refrigerator</h3>
+                    <p>Cooling issues, ice makers, leaks</p>
+                </div>
+                
+                <div class="appliance-card" data-appliance="washer">
+                    <div class="appliance-icon">🌊</div>
+                    <h3>Washing Machine</h3>
+                    <p>Drainage, spinning, error codes</p>
+                </div>
+                
+                <div class="appliance-card" data-appliance="dryer">
+                    <div class="appliance-icon">🔥</div>
+                    <h3>Dryer</h3>
+                    <p>Heating, drum rotation, lint</p>
+                </div>
+                
+                <div class="appliance-card" data-appliance="dishwasher">
+                    <div class="appliance-icon">🍽️</div>
+                    <h3>Dishwasher</h3>
+                    <p>Cleaning, drainage, cycles</p>
+                </div>
+                
+                <div class="appliance-card" data-appliance="oven">
+                    <div class="appliance-icon">🔥</div>
+                    <h3>Oven/Stove</h3>
+                    <p>Heating, ignition, temperature</p>
+                </div>
+                
+                <div class="appliance-card" data-appliance="microwave">
+                    <div class="appliance-icon">📡</div>
+                    <h3>Microwave</h3>
+                    <p>Heating, turntable, display</p>
+                </div>
+            </div>
+            
+            <!-- Diagnosis Form -->
+            <div class="diagnosis-form" id="diagnosisForm">
+                <div class="form-header">
+                    <h3>Describe Your Issue</h3>
+                    <button class="close-btn" onclick="closeDiagnosisForm()">×</button>
+                </div>
+                
+                <form id="troubleshootForm">
+                    <div class="form-group">
+                        <label for="brand">Appliance Brand</label>
+                        <select id="brand" required>
+                            <option value="">Select brand...</option>
+                            <option value="lg">LG</option>
+                            <option value="samsung">Samsung</option>
+                            <option value="whirlpool">Whirlpool</option>
+                            <option value="ge">GE</option>
+                            <option value="maytag">Maytag</option>
+                            <option value="bosch">Bosch</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="errorCode">Error Code (if any)</label>
+                        <input type="text" id="errorCode" placeholder="e.g., E1, F2, etc.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="symptoms">Symptoms</label>
+                        <textarea id="symptoms" rows="4" placeholder="Describe what's happening with your appliance..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="urgency">
+                            <span>This is urgent - appliance not functioning</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">
+                        Diagnose Issue
+                        <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M4 10 L16 10 M16 10 L12 6 M16 10 L12 14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Three simple steps to fix your appliance</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Select & Describe</h3>
+                        <p>Choose your appliance type and describe the issue or enter the error code</p>
+                    </div>
+                </div>
+                
+                <div class="step-connector"></div>
+                
+                <div class="step-item">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>AI Diagnosis</h3>
+                        <p>Our system analyzes the problem and identifies the most likely cause</p>
+                    </div>
+                </div>
+                
+                <div class="step-connector"></div>
+                
+                <div class="step-item">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Follow Steps</h3>
+                        <p>Get detailed repair instructions with safety tips and visual guides</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Modal -->
+    <div class="modal" id="resultsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Diagnosis Results</h3>
+                <button class="close-btn" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body" id="resultsBody">
+                <!-- Results will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content" style="max-width: 400px; padding: 30px;">
+            <div class="modal-header">
+                <h3 id="authModalTitle">Login</h3>
+                <button class="close-btn" onclick="closeAuthModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="auth-tabs" style="display: flex; margin-bottom: 25px; border-bottom: 2px solid rgba(255,255,255,0.1);">
+                    <button class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')" style="flex: 1; padding: 12px; background: none; border: none; font-size: 16px; font-weight: 500; font-family: inherit; color: var(--text-color); cursor: pointer; border-bottom: 2px solid var(--primary-color); margin-bottom: -2px; transition: all 0.3s ease;">Login</button>
+                    <button class="auth-tab" id="tabSignup" onclick="switchAuthTab('signup')" style="flex: 1; padding: 12px; background: none; border: none; font-size: 16px; font-weight: 500; font-family: inherit; color: rgba(255,255,255,0.5); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.3s ease;">Sign Up</button>
+                </div>
+                
+                <form id="authForm">
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="authEmail" style="display: block; margin-bottom: 8px; font-size: 0.9rem; color: rgba(255,255,255,0.8);">Email Address</label>
+                        <input type="email" id="authEmail" required placeholder="you@example.com" class="form-control" style="width: 100%; padding: 14px 16px; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: white; font-family: inherit; font-size: 16px; outline: none; transition: border-color 0.3s ease;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 10px;">
+                        <label for="authPassword" style="display: block; margin-bottom: 8px; font-size: 0.9rem; color: rgba(255,255,255,0.8);">Password</label>
+                        <input type="password" id="authPassword" required placeholder="••••••••" class="form-control" style="width: 100%; padding: 14px 16px; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: white; font-family: inherit; font-size: 16px; outline: none; transition: border-color 0.3s ease;">
+                    </div>
+                    <div id="authErrorMsg" style="color: #ef4444; margin-top: 10px; font-size: 0.9rem; display: none; text-align: center;"></div>
+                    <div id="authSuccessMsg" style="color: #10b981; margin-top: 10px; font-size: 0.9rem; display: none; text-align: center;"></div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full" id="authSubmitBtn" style="margin-top: 25px; padding: 14px; width: 100%; font-size: 16px;">
+                        Login
+                    </button>
+                    <button type="button" class="btn" id="logoutBtn" onclick="logoutUser()" style="margin-top: 15px; padding: 14px; width: 100%; font-size: 16px; display: none; background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3);">
+                        Log Out
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+                            <rect x="8" y="8" width="24" height="24" rx="3" stroke="currentColor" stroke-width="2.5"/>
+                            <circle cx="20" cy="20" r="5" fill="currentColor"/>
+                            <path d="M20 4 L20 12 M20 28 L20 36 M4 20 L12 20 M28 20 L36 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                        <span class="logo-text">Fix<span class="highlight">My</span>Device</span>
+                    </div>
+                    <p class="footer-description">Smart appliance troubleshooting for everyone</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#diagnose">Diagnose</a></li>
+                        <li><a href="#guides">Guides</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Fix My Device. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
